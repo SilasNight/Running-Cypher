@@ -1,4 +1,3 @@
-#A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 0 1 2 3 4 5 6 7 8 9 . , ? ! : ; ' " - _ / \ | ( ) [ ] { } < > + - * / = % & @ # $ ^ ~ `
 import tkinter as tk
 from tkinter import filedialog
 
@@ -38,33 +37,59 @@ class Window:
         self.file_selection_box.update()
 
     def check(self):
-        item = self.file_selection_box.get()
-        if len(item) != 0:
-            return True
+        path = self.file_selection_box.get()
+        document_type = path[-4:]
+        print(document_type)
+        if len(path) != 0:
+            if document_type != ".txt":
+                error("Not a .txt file","The File has to be a .txt")
+            else:
+                return True
         else:
-            return False
+            error("No file path","Please select a file to encrypt/decrypt")
 
     def encrypt_button(self):
         if self.check():
-            pass
-        else:
-            empty_box()
-            # error message TODO
+            self.encryption("jack")
+
+
 
     def decrypt_button(self):
         if self.check():
-            pass
-        else:
-            empty_box()
-            # error message TODO
+            self.encryption("jack")
 
 
-def empty_box():
+    def encryption(self,action):
+        characters = ['Z', 'K', '(', 'U', '-', 'h', '0', 'X', 'i', 'v', '#', '}', '=', ':', 'w', 'f', '/', '9', '|',
+                      'B', 'E', 'N', 'e', ';', 'c', "'", '`', '&', 'd', ']', '1', '<', '-', 'M', '*', ',', '5', 'u',
+                      'j', 'C', 'O', '"', 'z', 'W', 'x', '[', 'a', 'b', 'F', 'Q', '?', '@', 'D', '4', 'L', 'q', 'G',
+                      'J', 'I', 'y', 'R', 'H', 'o', '+', '%', 'T', 'm', '^', '6', '_', '3', '7', '$', 'V', '2', 'l',
+                      'k', 's', '8', 'P', 'Y', 'r', ')', ' ', 'S', '.', '>', '~', 'g', 'n', 'p', 't', '{', '!', 'A']
+
+        password = self.password_entry.get()
+        password = list(password)
+
+        for index, char in enumerate(password):
+            value = characters.index(char)
+            password[index] = value
+        print(password)
+
+        path = self.file_selection_box.get()
+        with open(path,"r") as file:
+            text = file.read()
+
+
+
+
+
+
+
+def error(label,message):
     window = tk.Tk()
     window.config(padx=20,pady=20)
-    window.title("No file path")
+    window.title(label)
 
-    error_label = tk.Label(window, text= "Please select a file to encrypt/decrypt")
+    error_label = tk.Label(window, text= message)
     ok_button = tk.Button(window, text= "OK", command = window.destroy)
 
     error_label.grid(column=0, row=0)
