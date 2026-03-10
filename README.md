@@ -38,6 +38,9 @@ This program works great and it's quick but it can't do massive files at once.<b
 I had downloaded the entire script of the bee movie to test it and it only <br>
 did about 5000 lines. It did those lines in like 3 seconds so I still call it a <br>
 success.
+
+The requirements seem to need django stuff for some reason.. I don't know why that <br>
+was installed on the enviroment I am sorry
 ___
 
 ### Contributor
