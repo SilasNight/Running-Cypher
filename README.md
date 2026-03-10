@@ -1,7 +1,9 @@
-# Wallpaper Downloader
-This is a small application that is used to download the daily "image of the day" from NASA. <br>
-You can use my api. But if you are going to be using this with the automatic download <br>
-I am going to ask that you make your own account on the NASA website and use your api instead<br>
+# Running Cypher
+This was made just to see if I could. I had heard about running cyphers previously and <br>
+the entire concept seemed really interesting. 
+
+So this is a program where you can encrypt or decrypt .txt files based on a password that<br>
+will be used as the running cypher.
 ___
 ### Installation 
 You need to decide where you want this code to be downloaded to<br>
@@ -16,13 +18,13 @@ Now navigate to you the folder you want to use with<br>
 cd (your filepath)
 
 Get the project<br>
-git clone https://github.com/SilasNight/wallpaper-downloader
+git clone https://github.com/SilasNight/Running-Cypher
 
 Create a virtual enviroment for the project<br>
 python3 -m venv .venv
 
 Navigate to the project<br>
-cd wallpaper-downloader
+cd Running-Cypher
 
 Install the requirements<br>
 pip install -r requirements.txt
@@ -31,8 +33,11 @@ Run the program<br>
 py main.py
 ___
 
-### Making independant executable
-I would love to give advice on this but I haven't found a way to make it work without the temp file issue
+### Comments
+This program works great and it's quick but it can't do massive files at once.<br>
+I had downloaded the entire script of the bee movie to test it and it only <br>
+did about 5000 lines. It did those lines in like 3 seconds so I still call it a <br>
+success.
 ___
 
 ### Contributor
